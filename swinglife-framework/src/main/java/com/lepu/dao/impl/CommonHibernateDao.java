@@ -129,4 +129,10 @@ public class CommonHibernateDao<T> extends HibernateDaoSupport<T> {
 
 	}
 
+	@Override
+	public void isDelete(T t) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

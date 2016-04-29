@@ -37,4 +37,6 @@ public interface SystemMenuService {
 	
 	
 	public void deleteMenu(Integer menuId);
+	
+	public void updateMenu(SystemMenu menu);
 }

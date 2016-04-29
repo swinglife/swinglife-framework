@@ -97,4 +97,9 @@ public class CommonDao<T> implements BaseDao<T> {
 
 	}
 
+	@Override
+	public void isDelete(T t) {
+		sessionFactory.getCurrentSession().update(t);
+	}
+
 }

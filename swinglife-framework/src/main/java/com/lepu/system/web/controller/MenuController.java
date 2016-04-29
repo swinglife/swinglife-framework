@@ -27,8 +27,25 @@ public class MenuController {
 	@Autowired
 	private SystemMenuService menuService;
 
-	
-	
+	@RequestMapping("editMenu")
+	@ResponseBody
+	public Map editMenu(String name, String description, Integer menuId, String url, Integer parentId, String icon) {
+		Map result = new HashMap();
+		SystemMenu menu = new SystemMenu();
+		System.out.println("menuId::" + menuId);
+		menu.setName(name);
+		menu.setDescription(description);
+		menu.setId(menuId);
+		menu.setParentId(parentId);
+		menu.setIcon(icon);
+		menu.setUrl(url);
+		if (menu != null) {
+			menuService.updateMenu(menu);
+		}
+		result.put("code", 1);
+		return result;
+	}
+
 	@RequestMapping("getMenu")
 	@ResponseBody
 	public Map getMenu(Integer menuId) {

@@ -201,6 +201,15 @@
 				})
 			}
 			
+			function postAjax(params,url,fn){
+				$.ajax({
+					type:'post',
+					url:url,
+					data:params,
+					success:fn
+				})
+			}
+			
 			function delData(params,url,fn){
 				excAjax(params,url,fn);
 			}
@@ -213,6 +222,14 @@
 				var parentId = $("#parentId").val();
 				var icon = $("#icon").val();
 				
+				
+				var params = "name="+name+"&menuId="+id+"&description="+content+"&url="+url+"&parentId="+parentId+"&icon="+icon;
+				postAjax(params,'editMenu',function(msg){
+					if(msg.code==1){
+						window.location="/system/menu/list"
+					}
+				})
+				
 			}
 			
 			
@@ -223,7 +240,7 @@
 					$("#content").val(msg.menu.description)
 					$("#url").val(msg.menu.url);
 					$("#icon").val(msg.menu.icon)
-					$("#saveButton").attr("onclick","editMenu(1)");
+					$("#saveButton").attr("onclick","editMenu('"+id+"')");
 				})
 			}
 			

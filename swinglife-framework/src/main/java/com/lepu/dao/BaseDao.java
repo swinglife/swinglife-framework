@@ -27,6 +27,8 @@ public interface BaseDao<T> {
 	public void update(T t);
 
 	public void del(T t);
+	
+	public void isDelete(T t);
 
 	public void cloaseSession();
 

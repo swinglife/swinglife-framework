@@ -37,6 +37,7 @@ public class SystemMenu extends BaseModel {
 
 	@Transient
 	List<SystemMenu> subMenus;
+	
 
 	public List<SystemMenu> getSubMenus() {
 		return subMenus;
