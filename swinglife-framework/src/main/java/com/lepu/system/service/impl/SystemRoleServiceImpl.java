@@ -35,6 +35,9 @@ public class SystemRoleServiceImpl implements SystemRoleService {
 	@Autowired
 	private CommonDao<SystemRolePermission> rolePermissionDao;
 
+	@Autowired
+	private CommonDao<SystemPermission> permissionDao;
+
 	@Override
 	public List<SystemRole> getAllRoleList() {
 		List<SystemRole> list = null;
@@ -100,6 +103,13 @@ public class SystemRoleServiceImpl implements SystemRoleService {
 		SystemRolePermission rolePermission = null;
 		rolePermission = rolePermissionDao.findObjectByHQL("FROM SystemRolePermission WHERE roleId = ? AND permissionId = ?", new Object[] { roleId, permissionId });
 		return rolePermission;
+	}
+
+	@Override
+	public List<SystemPermission> getPermissionList() {
+		List<SystemPermission> list = null;
+		list = permissionDao.findByHQL("FROM SystemPermission");
+		return list;
 	}
 
 }

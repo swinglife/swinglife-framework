@@ -20,6 +20,11 @@ import com.google.gson.Gson;
 import com.lepu.system.model.SystemMenu;
 import com.lepu.system.service.SystemMenuService;
 
+/****
+ * 菜单管理
+ * @author Xujingxi
+ *
+ */
 @Controller
 @RequestMapping("system/menu")
 public class MenuController {
@@ -119,6 +124,7 @@ public class MenuController {
 		}
 		menu.setCreateTime(new Date());
 		menu.setUpdateTime(new Date());
+		menu.setIsDelete(0);
 		menuService.addMenu(menu);
 		result.put("code", 1);
 		return result;

@@ -205,7 +205,7 @@
 							href="/system/admin/list"><span class="submenu-label">管理员管理</span></a></li>
 						<li <c:if test="${subMenu=='menuList' }">class="active"</c:if>><a
 							href="/system/menu/list"><span class="submenu-label">菜单管理</span></a></li>
-						<li><a href="form_wizard.html"><span
+						<li><a href="/system/permission/list"><span
 								class="submenu-label">权限管理</span></a></li>
 						<li <c:if test="${subMenu=='roleList' }">class="active"</c:if>><a
 							href="/system/role/list"><span class="submenu-label">角色管理</span></a></li>

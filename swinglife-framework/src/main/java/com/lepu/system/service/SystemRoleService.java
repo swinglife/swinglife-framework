@@ -2,12 +2,19 @@ package com.lepu.system.service;
 
 import java.util.List;
 
+import com.lepu.system.model.SystemPermission;
 import com.lepu.system.model.SystemRole;
 import com.lepu.system.model.SystemRoleMenu;
 import com.lepu.system.model.SystemRolePermission;
 
 public interface SystemRoleService {
 
+	/***
+	 * 获取所有权限列表
+	 * @return
+	 */
+	public List<SystemPermission> getPermissionList();
+	
 	/****
 	 * 获取所有角色列表
 	 * @return
